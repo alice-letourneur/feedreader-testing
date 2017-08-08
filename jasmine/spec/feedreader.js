@@ -1,9 +1,9 @@
 // Placing all our tests within the $() function to ensure they don't run until the DOM is ready
 $(function() {
-    // This test suite contains a set of tests about RSS feeds.
+    // This test suite contains a set of tests about RSS feeds
     describe('RSS Feeds', function() {
 
-        // Tests if allFeeds variable has been defined and that it is not empty
+        // Test if allFeeds variable has been defined and that it is not empty
         it('are defined', function() {
             expect(allFeeds).toBeDefined();
             expect(allFeeds.length).not.toBe(0);
@@ -31,14 +31,14 @@ $(function() {
     });
 
 
-    // This test suite contains a set of tests about the menu.
+    // This test suite contains a set of tests about the menu
     describe('The menu', function() {
-    
-        /* TODO: Write a test that ensures the menu element is
-         * hidden by default. You'll have to analyze the HTML and
-         * the CSS to determine how we're performing the
-         * hiding/showing of the menu element.
-         */
+      // Test if The menu element is hidden by default
+        it('is hidden by default', function() {
+          var menuHidden = document.body.classList.contains("menu-hidden");
+            // Test if the body has the class menu-hidden applied to it by default
+            expect(menuHidden).toBeTruthy();
+        });
 
          /* TODO: Write a test that ensures the menu changes
           * visibility when the menu icon is clicked. This test
