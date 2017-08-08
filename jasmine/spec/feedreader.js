@@ -31,10 +31,11 @@ $(function() {
          * in the allFeeds object and ensures it has a URL defined
          * and that the URL is not empty.
          */
-         it('has a URL defined which is not null', function() {
+         it('has a URL defined which is not empty', function() {
            allFeeds.forEach(function(feed) {
              // Test if a url is defined for each item in the allFeeds array
              expect(feed.url).toBeDefined();
+             // Test if the url is at least 1 character long for each item in the allFeeds array
              expect(feed.url.length).not.toBe(0);
           });
          });
@@ -44,6 +45,14 @@ $(function() {
          * in the allFeeds object and ensures it has a name defined
          * and that the name is not empty.
          */
+         it('has a name defined which is not empty', function() {
+           allFeeds.forEach(function(feed) {
+             // Test if a name is defined for each item in the allFeeds array
+             expect(feed.name).toBeDefined();
+             // Test if the name is at least 1 character long for each item in the allFeeds array
+             expect(feed.name.length).not.toBe(0);
+           });
+         });
     });
 
 
