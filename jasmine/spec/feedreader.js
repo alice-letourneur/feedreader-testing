@@ -57,12 +57,13 @@ $(function() {
           });
     });
 
+    // This test suite contains a set of tests about initial feed entries
     describe('Initial Entries', function() {
-
+      // Make sure the test is run only once loadFeed function has completed its work
       beforeEach(function(done) {
         loadFeed(0,done);
       });
-
+      // Test if there is at least 1 single entry loaded
       it('are loaded', function(done) {
         var totalEntries = $('.feed .entry').length;
         var minimumEntries = 0;
@@ -71,8 +72,9 @@ $(function() {
       });
     });
 
-    /* TODO: Write a new test suite named "New Feed Selection" */
-
+    // This test suite contains a set of tests about New Feed Selection
+    describe('New Feed Selection', function() {
+    });
         /* TODO: Write a test that ensures when a new feed is loaded
          * by the loadFeed function that the content actually changes.
          * Remember, loadFeed() is asynchronous.
