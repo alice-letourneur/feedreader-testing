@@ -40,6 +40,12 @@ $(function() {
         body = $("body");
         menuIcon = $(".menu-icon-link");
       });
+
+      // Test if all the variable I am about to use have been defined
+      it('has a body and a menuIcon defined', function() {
+          expect(body).toBeDefined();
+          expect(menuIcon).toBeDefined();
+      });
       // Test if The menu element is hidden by default
         it('is hidden by default', function() {
             // Test if the body has the class menu-hidden applied to it by default
@@ -59,14 +65,25 @@ $(function() {
 
     // This test suite contains a set of tests about initial feed entries
     describe('Initial Entries', function() {
+      var totalEntries;
+      var minimumEntries;
+
       // Make sure the test is run only once loadFeed function has completed its work
       beforeEach(function(done) {
-        loadFeed(0,done);
+        loadFeed(0,function () {
+          totalEntries = $('.feed .entry').length;
+          minimumEntries = 0;
+          done();
+        });
+      });
+
+      // Test if all the variable I am about to use have been defined
+      it('have totalEntries and minimumEntries defined', function() {
+          expect(totalEntries).toBeDefined();
+          expect(minimumEntries).toBeDefined();
       });
       // Test if there is at least 1 single entry loaded
       it('are loaded', function(done) {
-        var totalEntries = $('.feed .entry').length;
-        var minimumEntries = 0;
         expect(totalEntries).toBeGreaterThan(minimumEntries);
         done();
       });
@@ -85,6 +102,12 @@ $(function() {
             done();
           });
         });
+      });
+
+      // Test if all the variables I am about to use have been defined
+      it('has an initialFeed and an updatedFeed defined', function() {
+          expect(initialFeed).toBeDefined();
+          expect(updatedFeed).toBeDefined();
       });
       it('changes when a new feed is loaded', function(done) {
         // Test if the updatedFeed is different from the initialFeed
