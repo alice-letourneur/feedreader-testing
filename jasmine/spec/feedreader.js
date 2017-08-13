@@ -75,14 +75,11 @@ $(function() {
         });
       });
 
-      // Test if all the variable I am about to use have been defined
-      it('have totalEntries and minimumEntries defined', function() {
-          expect(totalEntries).toBeDefined();
-      });
-      // Test if there is at least 1 single entry loaded
-      it('are loaded', function(done) {
+      it('are loaded', function() {
+        // Test if all the variables I am about to use have been defined
+        expect(totalEntries).toBeDefined();
+        // Test if there is at least 1 single entry loaded
         expect(totalEntries).toBeGreaterThan(0);
-        done();
       });
     });
 
@@ -101,15 +98,12 @@ $(function() {
         });
       });
 
-      // Test if all the variables I am about to use have been defined
-      it('has an initialFeed and an updatedFeed defined', function() {
-          expect(initialFeed).toBeDefined();
-          expect(updatedFeed).toBeDefined();
-      });
-      it('changes when a new feed is loaded', function(done) {
+      it('changes when a new feed is loaded', function() {
+        // Test if all the variables I am about to use have been defined
+        expect(initialFeed).toBeDefined();
+        expect(updatedFeed).toBeDefined();
         // Test if the updatedFeed is different from the initialFeed
         expect(updatedFeed).not.toBe(initialFeed);
-        done();
       });
     });
 }());
