@@ -86,9 +86,10 @@ $(function() {
           });
         });
       });
-      it('changes when a new feed is loaded', function() {
+      it('changes when a new feed is loaded', function(done) {
         // Test if the updatedFeed is different from the initialFeed
         expect(updatedFeed).not.toBe(initialFeed);
+        done();
       });
     });
 }());
