@@ -66,13 +66,11 @@ $(function() {
     // This test suite contains a set of tests about initial feed entries
     describe('Initial Entries', function() {
       var totalEntries;
-      var minimumEntries;
 
       // Make sure the test is run only once loadFeed function has completed its work
       beforeEach(function(done) {
         loadFeed(0,function () {
           totalEntries = $('.feed .entry').length;
-          minimumEntries = 0;
           done();
         });
       });
@@ -80,11 +78,10 @@ $(function() {
       // Test if all the variable I am about to use have been defined
       it('have totalEntries and minimumEntries defined', function() {
           expect(totalEntries).toBeDefined();
-          expect(minimumEntries).toBeDefined();
       });
       // Test if there is at least 1 single entry loaded
       it('are loaded', function(done) {
-        expect(totalEntries).toBeGreaterThan(minimumEntries);
+        expect(totalEntries).toBeGreaterThan(0);
         done();
       });
     });
